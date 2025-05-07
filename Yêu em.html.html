@@ -1,0 +1,560 @@
+<html>
+<head>
+<title>Yêu em.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #d5b778;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bababa;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+.s5 { color: #56a8f5;}
+.s6 { color: #7a7e85;}
+.s7 { color: #cf8e6d;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Yêu em.html</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;!DOCTYPE </span><span class="s2">html</span><span class="s0">&gt;</span>
+<span class="s0">&lt;html </span><span class="s2">lang</span><span class="s3">=&quot;en&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;head&gt;</span>
+    <span class="s0">&lt;meta </span><span class="s2">charset</span><span class="s3">=&quot;UTF-8&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;title&gt;</span><span class="s1">Title</span><span class="s0">&lt;/title&gt;</span>
+<span class="s0">&lt;/head&gt;</span>
+<span class="s0">&lt;body&gt;&lt;!DOCTYPE </span><span class="s2">HTML </span><span class="s0">PUBLIC </span><span class="s3">&quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;</span><span class="s0">&gt;</span>
+
+<span class="s0">&lt;HTML&gt;</span>
+
+ <span class="s0">&lt;HEAD&gt;</span>
+
+  <span class="s0">&lt;TITLE&gt; </span><span class="s1">New Document </span><span class="s0">&lt;/TITLE&gt;</span>
+
+  <span class="s0">&lt;META </span><span class="s2">NAME</span><span class="s3">=&quot;Generator&quot; </span><span class="s2">CONTENT</span><span class="s3">=&quot;EditPlus&quot;</span><span class="s0">&gt;</span>
+
+  <span class="s0">&lt;META </span><span class="s2">NAME</span><span class="s3">=&quot;Author&quot; </span><span class="s2">CONTENT</span><span class="s3">=&quot;&quot;</span><span class="s0">&gt;</span>
+
+  <span class="s0">&lt;META </span><span class="s2">NAME</span><span class="s3">=&quot;Keywords&quot; </span><span class="s2">CONTENT</span><span class="s3">=&quot;&quot;</span><span class="s0">&gt;</span>
+
+  <span class="s0">&lt;META </span><span class="s2">NAME</span><span class="s3">=&quot;Description&quot; </span><span class="s2">CONTENT</span><span class="s3">=&quot;&quot;</span><span class="s0">&gt;</span>
+
+  <span class="s0">&lt;style&gt;</span>
+
+  <span class="s0">html</span><span class="s1">, </span><span class="s0">body </span><span class="s1">{</span>
+
+  <span class="s2">height</span><span class="s1">: </span><span class="s4">100</span><span class="s1">%;</span>
+
+  <span class="s2">padding</span><span class="s1">: </span><span class="s4">0</span><span class="s1">;</span>
+
+  <span class="s2">margin</span><span class="s1">: </span><span class="s4">0</span><span class="s1">;</span>
+
+  <span class="s2">background</span><span class="s1">: </span><span class="s5">#000</span><span class="s1">;</span>
+
+<span class="s1">}</span>
+
+<span class="s0">canvas </span><span class="s1">{</span>
+
+  <span class="s2">position</span><span class="s1">: </span><span class="s3">absolute</span><span class="s1">;</span>
+
+  <span class="s2">width</span><span class="s1">: </span><span class="s4">100</span><span class="s1">%;</span>
+
+  <span class="s2">height</span><span class="s1">: </span><span class="s4">100</span><span class="s1">%;</span>
+
+<span class="s1">}</span>
+
+  <span class="s0">&lt;/style&gt;</span>
+
+ <span class="s0">&lt;/HEAD&gt;</span>
+
+
+ <span class="s0">&lt;BODY&gt;</span>
+
+  <span class="s0">&lt;canvas </span><span class="s2">id</span><span class="s3">=&quot;pinkboard&quot;</span><span class="s0">&gt;&lt;/canvas&gt;</span>
+
+  <span class="s0">&lt;script&gt;</span>
+
+  <span class="s6">/* 
+ 
+ * Settings 
+ 
+ */</span>
+
+<span class="s7">var </span><span class="s1">settings = {</span>
+
+  <span class="s1">particles: {</span>
+
+    <span class="s1">length:   </span><span class="s4">500</span><span class="s1">, </span><span class="s6">// maximum amount of particles</span>
+
+    <span class="s1">duration:   </span><span class="s4">2</span><span class="s1">, </span><span class="s6">// particle duration in sec</span>
+
+    <span class="s1">velocity: </span><span class="s4">100</span><span class="s1">, </span><span class="s6">// particle velocity in pixels/sec</span>
+
+    <span class="s1">effect: -</span><span class="s4">0.75</span><span class="s1">, </span><span class="s6">// play with this for a nice effect</span>
+
+    <span class="s1">size:      </span><span class="s4">30</span><span class="s1">, </span><span class="s6">// particle size in pixels</span>
+
+  <span class="s1">},</span>
+
+<span class="s1">};</span>
+
+
+<span class="s6">/* 
+ 
+ * RequestAnimationFrame polyfill by Erik Möller 
+ 
+ */</span>
+
+<span class="s1">(</span><span class="s7">function</span><span class="s1">(){</span><span class="s7">var </span><span class="s1">b=</span><span class="s4">0</span><span class="s1">;</span><span class="s7">var </span><span class="s1">c=[</span><span class="s3">&quot;ms&quot;</span><span class="s1">,</span><span class="s3">&quot;moz&quot;</span><span class="s1">,</span><span class="s3">&quot;webkit&quot;</span><span class="s1">,</span><span class="s3">&quot;o&quot;</span><span class="s1">];</span><span class="s7">for</span><span class="s1">(</span><span class="s7">var </span><span class="s1">a=</span><span class="s4">0</span><span class="s1">;a&lt;c.length&amp;&amp;!window.requestAnimationFrame;++a){window.requestAnimationFrame=window[c[a]+</span><span class="s3">&quot;RequestAnimationFrame&quot;</span><span class="s1">];window.cancelAnimationFrame=window[c[a]+</span><span class="s3">&quot;CancelAnimationFrame&quot;</span><span class="s1">]||window[c[a]+</span><span class="s3">&quot;CancelRequestAnimationFrame&quot;</span><span class="s1">]}</span><span class="s7">if</span><span class="s1">(!window.requestAnimationFrame){window.requestAnimationFrame=</span><span class="s7">function</span><span class="s1">(h,e){</span><span class="s7">var </span><span class="s1">d=</span><span class="s7">new </span><span class="s1">Date().getTime();</span><span class="s7">var </span><span class="s1">f=Math.max(</span><span class="s4">0</span><span class="s1">,</span><span class="s4">16</span><span class="s1">-(d-b));</span><span class="s7">var </span><span class="s1">g=window.setTimeout(</span><span class="s7">function</span><span class="s1">(){h(d+f)},f);b=d+f;</span><span class="s7">return </span><span class="s1">g}}</span><span class="s7">if</span><span class="s1">(!window.cancelAnimationFrame){window.cancelAnimationFrame=</span><span class="s7">function</span><span class="s1">(d){clearTimeout(d)}}}());</span>
+
+
+<span class="s6">/* 
+ 
+ * Point class 
+ 
+ */</span>
+
+<span class="s7">var </span><span class="s1">Point = (</span><span class="s7">function</span><span class="s1">() {</span>
+
+  <span class="s7">function </span><span class="s1">Point(x, y) {</span>
+
+    <span class="s7">this</span><span class="s1">.x = (</span><span class="s7">typeof </span><span class="s1">x !== </span><span class="s3">'undefined'</span><span class="s1">) ? x : </span><span class="s4">0</span><span class="s1">;</span>
+
+    <span class="s7">this</span><span class="s1">.y = (</span><span class="s7">typeof </span><span class="s1">y !== </span><span class="s3">'undefined'</span><span class="s1">) ? y : </span><span class="s4">0</span><span class="s1">;</span>
+
+  <span class="s1">}</span>
+
+  <span class="s1">Point.prototype.clone = </span><span class="s7">function</span><span class="s1">() {</span>
+
+    <span class="s7">return new </span><span class="s1">Point(</span><span class="s7">this</span><span class="s1">.x, </span><span class="s7">this</span><span class="s1">.y);</span>
+
+  <span class="s1">};</span>
+
+  <span class="s1">Point.prototype.length = </span><span class="s7">function</span><span class="s1">(length) {</span>
+
+    <span class="s7">if </span><span class="s1">(</span><span class="s7">typeof </span><span class="s1">length == </span><span class="s3">'undefined'</span><span class="s1">)</span>
+
+      <span class="s7">return </span><span class="s1">Math.sqrt(</span><span class="s7">this</span><span class="s1">.x * </span><span class="s7">this</span><span class="s1">.x + </span><span class="s7">this</span><span class="s1">.y * </span><span class="s7">this</span><span class="s1">.y);</span>
+
+    <span class="s7">this</span><span class="s1">.normalize();</span>
+
+    <span class="s7">this</span><span class="s1">.x *= length;</span>
+
+    <span class="s7">this</span><span class="s1">.y *= length;</span>
+
+    <span class="s7">return this</span><span class="s1">;</span>
+
+  <span class="s1">};</span>
+
+  <span class="s1">Point.prototype.normalize = </span><span class="s7">function</span><span class="s1">() {</span>
+
+    <span class="s7">var </span><span class="s1">length = </span><span class="s7">this</span><span class="s1">.length();</span>
+
+    <span class="s7">this</span><span class="s1">.x /= length;</span>
+
+    <span class="s7">this</span><span class="s1">.y /= length;</span>
+
+    <span class="s7">return this</span><span class="s1">;</span>
+
+  <span class="s1">};</span>
+
+  <span class="s7">return </span><span class="s1">Point;</span>
+
+<span class="s1">})();</span>
+
+
+<span class="s6">/* 
+ 
+ * Particle class 
+ 
+ */</span>
+
+<span class="s7">var </span><span class="s1">Particle = (</span><span class="s7">function</span><span class="s1">() {</span>
+
+  <span class="s7">function </span><span class="s1">Particle() {</span>
+
+    <span class="s7">this</span><span class="s1">.position = </span><span class="s7">new </span><span class="s1">Point();</span>
+
+    <span class="s7">this</span><span class="s1">.velocity = </span><span class="s7">new </span><span class="s1">Point();</span>
+
+    <span class="s7">this</span><span class="s1">.acceleration = </span><span class="s7">new </span><span class="s1">Point();</span>
+
+    <span class="s7">this</span><span class="s1">.age = </span><span class="s4">0</span><span class="s1">;</span>
+
+  <span class="s1">}</span>
+
+  <span class="s1">Particle.prototype.initialize = </span><span class="s7">function</span><span class="s1">(x, y, dx, dy) {</span>
+
+    <span class="s7">this</span><span class="s1">.position.x = x;</span>
+
+    <span class="s7">this</span><span class="s1">.position.y = y;</span>
+
+    <span class="s7">this</span><span class="s1">.velocity.x = dx;</span>
+
+    <span class="s7">this</span><span class="s1">.velocity.y = dy;</span>
+
+    <span class="s7">this</span><span class="s1">.acceleration.x = dx * settings.particles.effect;</span>
+
+    <span class="s7">this</span><span class="s1">.acceleration.y = dy * settings.particles.effect;</span>
+
+    <span class="s7">this</span><span class="s1">.age = </span><span class="s4">0</span><span class="s1">;</span>
+
+  <span class="s1">};</span>
+
+  <span class="s1">Particle.prototype.update = </span><span class="s7">function</span><span class="s1">(deltaTime) {</span>
+
+    <span class="s7">this</span><span class="s1">.position.x += </span><span class="s7">this</span><span class="s1">.velocity.x * deltaTime;</span>
+
+    <span class="s7">this</span><span class="s1">.position.y += </span><span class="s7">this</span><span class="s1">.velocity.y * deltaTime;</span>
+
+    <span class="s7">this</span><span class="s1">.velocity.x += </span><span class="s7">this</span><span class="s1">.acceleration.x * deltaTime;</span>
+
+    <span class="s7">this</span><span class="s1">.velocity.y += </span><span class="s7">this</span><span class="s1">.acceleration.y * deltaTime;</span>
+
+    <span class="s7">this</span><span class="s1">.age += deltaTime;</span>
+
+  <span class="s1">};</span>
+
+  <span class="s1">Particle.prototype.draw = </span><span class="s7">function</span><span class="s1">(context, image) {</span>
+
+    <span class="s7">function </span><span class="s1">ease(t) {</span>
+
+      <span class="s7">return </span><span class="s1">(--t) * t * t + </span><span class="s4">1</span><span class="s1">;</span>
+
+    <span class="s1">}</span>
+
+    <span class="s7">var </span><span class="s1">size = image.width * ease(</span><span class="s7">this</span><span class="s1">.age / settings.particles.duration);</span>
+
+    <span class="s1">context.globalAlpha = </span><span class="s4">1 </span><span class="s1">- </span><span class="s7">this</span><span class="s1">.age / settings.particles.duration;</span>
+
+    <span class="s1">context.drawImage(image, </span><span class="s7">this</span><span class="s1">.position.x - size / </span><span class="s4">2</span><span class="s1">, </span><span class="s7">this</span><span class="s1">.position.y - size / </span><span class="s4">2</span><span class="s1">, size, size);</span>
+
+  <span class="s1">};</span>
+
+  <span class="s7">return </span><span class="s1">Particle;</span>
+
+<span class="s1">})();</span>
+
+
+<span class="s6">/* 
+ 
+ * ParticlePool class 
+ 
+ */</span>
+
+<span class="s7">var </span><span class="s1">ParticlePool = (</span><span class="s7">function</span><span class="s1">() {</span>
+
+  <span class="s7">var </span><span class="s1">particles,</span>
+
+      <span class="s1">firstActive = </span><span class="s4">0</span><span class="s1">,</span>
+
+      <span class="s1">firstFree   = </span><span class="s4">0</span><span class="s1">,</span>
+
+      <span class="s1">duration    = settings.particles.duration;</span>
+
+
+
+  <span class="s7">function </span><span class="s1">ParticlePool(length) {</span>
+
+    <span class="s6">// create and populate particle pool</span>
+
+    <span class="s1">particles = </span><span class="s7">new </span><span class="s1">Array(length);</span>
+
+    <span class="s7">for </span><span class="s1">(</span><span class="s7">var </span><span class="s1">i = </span><span class="s4">0</span><span class="s1">; i &lt; particles.length; i++)</span>
+
+      <span class="s1">particles[i] = </span><span class="s7">new </span><span class="s1">Particle();</span>
+
+  <span class="s1">}</span>
+
+  <span class="s1">ParticlePool.prototype.add = </span><span class="s7">function</span><span class="s1">(x, y, dx, dy) {</span>
+
+    <span class="s1">particles[firstFree].initialize(x, y, dx, dy);</span>
+
+
+
+    <span class="s6">// handle circular queue</span>
+
+    <span class="s1">firstFree++;</span>
+
+    <span class="s7">if </span><span class="s1">(firstFree   == particles.length) firstFree   = </span><span class="s4">0</span><span class="s1">;</span>
+
+    <span class="s7">if </span><span class="s1">(firstActive == firstFree       ) firstActive++;</span>
+
+    <span class="s7">if </span><span class="s1">(firstActive == particles.length) firstActive = </span><span class="s4">0</span><span class="s1">;</span>
+
+  <span class="s1">};</span>
+
+  <span class="s1">ParticlePool.prototype.update = </span><span class="s7">function</span><span class="s1">(deltaTime) {</span>
+
+    <span class="s7">var </span><span class="s1">i;</span>
+
+
+
+    <span class="s6">// update active particles</span>
+
+    <span class="s7">if </span><span class="s1">(firstActive &lt; firstFree) {</span>
+
+      <span class="s7">for </span><span class="s1">(i = firstActive; i &lt; firstFree; i++)</span>
+
+        <span class="s1">particles[i].update(deltaTime);</span>
+
+    <span class="s1">}</span>
+
+    <span class="s7">if </span><span class="s1">(firstFree &lt; firstActive) {</span>
+
+      <span class="s7">for </span><span class="s1">(i = firstActive; i &lt; particles.length; i++)</span>
+
+        <span class="s1">particles[i].update(deltaTime);</span>
+
+      <span class="s7">for </span><span class="s1">(i = </span><span class="s4">0</span><span class="s1">; i &lt; firstFree; i++)</span>
+
+        <span class="s1">particles[i].update(deltaTime);</span>
+
+    <span class="s1">}</span>
+
+
+
+    <span class="s6">// remove inactive particles</span>
+
+    <span class="s7">while </span><span class="s1">(particles[firstActive].age &gt;= duration &amp;&amp; firstActive != firstFree) {</span>
+
+      <span class="s1">firstActive++;</span>
+
+      <span class="s7">if </span><span class="s1">(firstActive == particles.length) firstActive = </span><span class="s4">0</span><span class="s1">;</span>
+
+    <span class="s1">}</span>
+
+
+
+
+
+  <span class="s1">};</span>
+
+  <span class="s1">ParticlePool.prototype.draw = </span><span class="s7">function</span><span class="s1">(context, image) {</span>
+
+    <span class="s6">// draw active particles</span>
+
+    <span class="s7">if </span><span class="s1">(firstActive &lt; firstFree) {</span>
+
+      <span class="s7">for </span><span class="s1">(i = firstActive; i &lt; firstFree; i++)</span>
+
+        <span class="s1">particles[i].draw(context, image);</span>
+
+    <span class="s1">}</span>
+
+    <span class="s7">if </span><span class="s1">(firstFree &lt; firstActive) {</span>
+
+      <span class="s7">for </span><span class="s1">(i = firstActive; i &lt; particles.length; i++)</span>
+
+        <span class="s1">particles[i].draw(context, image);</span>
+
+      <span class="s7">for </span><span class="s1">(i = </span><span class="s4">0</span><span class="s1">; i &lt; firstFree; i++)</span>
+
+        <span class="s1">particles[i].draw(context, image);</span>
+
+    <span class="s1">}</span>
+
+  <span class="s1">};</span>
+
+  <span class="s7">return </span><span class="s1">ParticlePool;</span>
+
+<span class="s1">})();</span>
+
+
+<span class="s6">/* 
+ 
+ * Putting it all together 
+ 
+ */</span>
+
+<span class="s1">(</span><span class="s7">function</span><span class="s1">(canvas) {</span>
+
+  <span class="s7">var </span><span class="s1">context = canvas.getContext(</span><span class="s3">'2d'</span><span class="s1">),</span>
+
+      <span class="s1">particles = </span><span class="s7">new </span><span class="s1">ParticlePool(settings.particles.length),</span>
+
+      <span class="s1">particleRate = settings.particles.length / settings.particles.duration, </span><span class="s6">// particles/sec</span>
+
+      <span class="s1">time;</span>
+
+
+
+  <span class="s6">// get point on heart with -PI &lt;= t &lt;= PI</span>
+
+  <span class="s7">function </span><span class="s1">pointOnHeart(t) {</span>
+
+    <span class="s7">return new </span><span class="s1">Point(</span>
+
+      <span class="s4">160 </span><span class="s1">* Math.pow(Math.sin(t), </span><span class="s4">3</span><span class="s1">),</span>
+
+      <span class="s4">130 </span><span class="s1">* Math.cos(t) - </span><span class="s4">50 </span><span class="s1">* Math.cos(</span><span class="s4">2 </span><span class="s1">* t) - </span><span class="s4">20 </span><span class="s1">* Math.cos(</span><span class="s4">3 </span><span class="s1">* t) - </span><span class="s4">10 </span><span class="s1">* Math.cos(</span><span class="s4">4 </span><span class="s1">* t) + </span><span class="s4">25</span>
+
+    <span class="s1">);</span>
+
+  <span class="s1">}</span>
+
+
+
+  <span class="s6">// creating the particle image using a dummy canvas</span>
+
+  <span class="s7">var </span><span class="s1">image = (</span><span class="s7">function</span><span class="s1">() {</span>
+
+    <span class="s7">var </span><span class="s1">canvas  = document.createElement(</span><span class="s3">'canvas'</span><span class="s1">),</span>
+
+        <span class="s1">context = canvas.getContext(</span><span class="s3">'2d'</span><span class="s1">);</span>
+
+    <span class="s1">canvas.width  = settings.particles.size;</span>
+
+    <span class="s1">canvas.height = settings.particles.size;</span>
+
+    <span class="s6">// helper function to create the path</span>
+
+    <span class="s7">function </span><span class="s1">to(t) {</span>
+
+      <span class="s7">var </span><span class="s1">point = pointOnHeart(t);</span>
+
+      <span class="s1">point.x = settings.particles.size / </span><span class="s4">2 </span><span class="s1">+ point.x * settings.particles.size / </span><span class="s4">350</span><span class="s1">;</span>
+
+      <span class="s1">point.y = settings.particles.size / </span><span class="s4">2 </span><span class="s1">- point.y * settings.particles.size / </span><span class="s4">350</span><span class="s1">;</span>
+
+      <span class="s7">return </span><span class="s1">point;</span>
+
+    <span class="s1">}</span>
+
+    <span class="s6">// create the path</span>
+
+    <span class="s1">context.beginPath();</span>
+
+    <span class="s7">var </span><span class="s1">t = -Math.PI;</span>
+
+    <span class="s7">var </span><span class="s1">point = to(t);</span>
+
+    <span class="s1">context.moveTo(point.x, point.y);</span>
+
+    <span class="s7">while </span><span class="s1">(t &lt; Math.PI) {</span>
+
+      <span class="s1">t += </span><span class="s4">0.01</span><span class="s1">; </span><span class="s6">// baby steps!</span>
+
+      <span class="s1">point = to(t);</span>
+
+      <span class="s1">context.lineTo(point.x, point.y);</span>
+
+    <span class="s1">}</span>
+
+    <span class="s1">context.closePath();</span>
+
+    <span class="s6">// create the fill</span>
+
+    <span class="s1">context.fillStyle = </span><span class="s3">'#ea80b0'</span><span class="s1">;</span>
+
+    <span class="s1">context.fill();</span>
+
+    <span class="s6">// create the image</span>
+
+    <span class="s7">var </span><span class="s1">image = </span><span class="s7">new </span><span class="s1">Image();</span>
+
+    <span class="s1">image.src = canvas.toDataURL();</span>
+
+    <span class="s7">return </span><span class="s1">image;</span>
+
+  <span class="s1">})();</span>
+
+
+
+  <span class="s6">// render that thing!</span>
+
+  <span class="s7">function </span><span class="s1">render() {</span>
+
+    <span class="s6">// next animation frame</span>
+
+    <span class="s1">requestAnimationFrame(render);</span>
+
+
+
+    <span class="s6">// update time</span>
+
+    <span class="s7">var </span><span class="s1">newTime   = </span><span class="s7">new </span><span class="s1">Date().getTime() / </span><span class="s4">1000</span><span class="s1">,</span>
+
+        <span class="s1">deltaTime = newTime - (time || newTime);</span>
+
+    <span class="s1">time = newTime;</span>
+
+
+
+    <span class="s6">// clear canvas</span>
+
+    <span class="s1">context.clearRect(</span><span class="s4">0</span><span class="s1">, </span><span class="s4">0</span><span class="s1">, canvas.width, canvas.height);</span>
+    
+    <span class="s6">// draw &quot;Đoan Thục&quot; text at center</span>
+    <span class="s1">context.save();</span>
+    <span class="s1">context.font = </span><span class="s3">&quot;bold 32px Arial&quot;</span><span class="s1">;</span>
+    <span class="s1">context.fillStyle = </span><span class="s3">&quot;#ffffff&quot;</span><span class="s1">;</span>
+    <span class="s1">context.textAlign = </span><span class="s3">&quot;center&quot;</span><span class="s1">;</span>
+    <span class="s1">context.textBaseline = </span><span class="s3">&quot;middle&quot;</span><span class="s1">;</span>
+    <span class="s1">context.fillText(</span><span class="s3">&quot;Đoan Thục&quot;</span><span class="s1">, canvas.width / </span><span class="s4">2</span><span class="s1">, canvas.height / </span><span class="s4">2</span><span class="s1">);</span>
+    <span class="s1">context.restore();</span>
+
+
+
+    <span class="s6">// create new particles</span>
+
+    <span class="s7">var </span><span class="s1">amount = particleRate * deltaTime;</span>
+
+    <span class="s7">for </span><span class="s1">(</span><span class="s7">var </span><span class="s1">i = </span><span class="s4">0</span><span class="s1">; i &lt; amount; i++) {</span>
+
+      <span class="s7">var </span><span class="s1">pos = pointOnHeart(Math.PI - </span><span class="s4">2 </span><span class="s1">* Math.PI * Math.random());</span>
+
+      <span class="s7">var </span><span class="s1">dir = pos.clone().length(settings.particles.velocity);</span>
+
+      <span class="s1">particles.add(canvas.width / </span><span class="s4">2 </span><span class="s1">+ pos.x, canvas.height / </span><span class="s4">2 </span><span class="s1">- pos.y, dir.x, -dir.y);</span>
+
+    <span class="s1">}</span>
+
+
+
+    <span class="s6">// update and draw particles</span>
+
+    <span class="s1">particles.update(deltaTime);</span>
+
+    <span class="s1">particles.draw(context, image);</span>
+
+  <span class="s1">}</span>
+
+
+
+  <span class="s6">// handle (re-)sizing of the canvas</span>
+
+  <span class="s7">function </span><span class="s1">onResize() {</span>
+
+    <span class="s1">canvas.width  = canvas.clientWidth;</span>
+
+    <span class="s1">canvas.height = canvas.clientHeight;</span>
+
+  <span class="s1">}</span>
+
+  <span class="s1">window.onresize = onResize;</span>
+
+
+
+  <span class="s6">// delay rendering bootstrap</span>
+
+  <span class="s1">setTimeout(</span><span class="s7">function</span><span class="s1">() {</span>
+
+    <span class="s1">onResize();</span>
+
+    <span class="s1">render();</span>
+
+  <span class="s1">}, </span><span class="s4">10</span><span class="s1">);</span>
+
+<span class="s1">})(document.getElementById(</span><span class="s3">'pinkboard'</span><span class="s1">));</span>
+
+  <span class="s0">&lt;/script&gt;</span>
+
+ <span class="s0">&lt;/BODY&gt;</span>
+
+<span class="s0">&lt;/HTML&gt;&lt;/body&gt;</span>
+<span class="s0">&lt;/html&gt;</span></pre>
+</body>
+</html>
